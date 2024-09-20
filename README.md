@@ -2,7 +2,7 @@
 
 # install packages 
 
-    npm install @react-navigation/native react-native-screens react-native-safe-area-context @react-navigation/stack react-native-gesture-handler  react-native-localize i18next react-i18next
+    npm install @react-navigation/native react-native-screens react-native-safe-area-context @react-navigation/stack react-native-gesture-handler  react-native-localize i18next react-i18next react-native-modal
 
 # Need to create JSON file in locales folder
 
