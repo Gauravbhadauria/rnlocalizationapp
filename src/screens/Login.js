@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -6,11 +6,13 @@ import {
   Button,
   TouchableOpacity,
   StyleSheet,
+  Image,
 } from 'react-native';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {useNavigation} from '@react-navigation/native';
 import CommonButton from '../components/CommonButton';
+import SelectLangModal from '../components/SelectLangModal';
 
 // Validation schema for login
 const loginValidationSchema = Yup.object().shape({
@@ -21,9 +23,19 @@ const loginValidationSchema = Yup.object().shape({
 });
 
 const Login = () => {
+  const [selectLanguage, setSelectLanguage] = useState('English');
   const navigation = useNavigation();
+  const [showModal, setShowModal] = useState(false);
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.langView}
+        onPress={() => {
+          setShowModal(true);
+        }}>
+        <Text style={styles.lang}>{selectLanguage}</Text>
+        <Image source={require('../images/dropdown.png')} style={styles.icon} />
+      </TouchableOpacity>
       <Text style={styles.wish}>Welcome,</Text>
       <Text style={styles.title}>Sign in to Continue!</Text>
       <Formik
@@ -74,6 +86,17 @@ const Login = () => {
           </View>
         )}
       </Formik>
+      <SelectLangModal
+        visible={showModal}
+        selectedLang={selectLanguage}
+        onClose={() => {
+          setShowModal(false);
+        }}
+        onSelect={lang => {
+          setSelectLanguage(lang);
+          setShowModal(false);
+        }}
+      />
     </View>
   );
 };
@@ -83,6 +106,12 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     justifyContent: 'center',
+  },
+  icon: {
+    width: 16,
+    height: 16,
+    marginLeft: 10,
+    tintColor: '#9e9e9e',
   },
   wish: {
     color: 'black',
@@ -120,6 +149,22 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: '600',
     marginBottom: 20,
+  },
+  langView: {
+    borderWidth: 1,
+    borderRadius: 8,
+    padding: 10,
+    borderColor: '#9e9e9e',
+    position: 'absolute',
+    top: 30,
+    right: 30,
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  lang: {
+    color: 'black',
+    fontSize: 16,
+    fontWeight: '600',
   },
 });
 

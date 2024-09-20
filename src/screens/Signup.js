@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -6,11 +6,13 @@ import {
   Button,
   TouchableOpacity,
   StyleSheet,
+  Image,
 } from 'react-native';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {useNavigation} from '@react-navigation/native';
 import CommonButton from '../components/CommonButton';
+import SelectLangModal from '../components/SelectLangModal';
 
 // Validation schema for signup
 const signupValidationSchema = Yup.object().shape({
@@ -25,9 +27,19 @@ const signupValidationSchema = Yup.object().shape({
 });
 
 const Signup = () => {
+  const [selectLanguage, setSelectLanguage] = useState('English');
   const navigation = useNavigation();
+  const [showModal, setShowModal] = useState(false);
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.langView}
+        onPress={() => {
+          setShowModal(true);
+        }}>
+        <Text style={styles.lang}>{selectLanguage}</Text>
+        <Image source={require('../images/dropdown.png')} style={styles.icon} />
+      </TouchableOpacity>
       <Text style={styles.wish}>Create Account</Text>
       <Text style={styles.title}>Sign up to get Started!</Text>
       <Formik
@@ -98,6 +110,17 @@ const Signup = () => {
           </View>
         )}
       </Formik>
+      <SelectLangModal
+        visible={showModal}
+        selectedLang={selectLanguage}
+        onClose={() => {
+          setShowModal(false);
+        }}
+        onSelect={lang => {
+          setSelectLanguage(lang);
+          setShowModal(false);
+        }}
+      />
     </View>
   );
 };
@@ -137,6 +160,28 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     fontWeight: '600',
     textAlign: 'center',
+  },
+  langView: {
+    borderWidth: 1,
+    borderRadius: 8,
+    padding: 10,
+    borderColor: '#9e9e9e',
+    position: 'absolute',
+    top: 30,
+    right: 30,
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  lang: {
+    color: 'black',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  icon: {
+    width: 16,
+    height: 16,
+    marginLeft: 10,
+    tintColor: '#9e9e9e',
   },
 });
 

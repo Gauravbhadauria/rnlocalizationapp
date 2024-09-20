@@ -28,7 +28,8 @@
     "confirmPasswordRequired": "Confirm Password is required",
     "invalidEmail": "Invalid Email Id",
     "minPasswordLength": "Password must be at least 6 characters",
-    "passwordMustMatch": "Password must match"
+    "passwordMustMatch": "Password must match",
+    "selectLanguage":"Select Language"
     }
 
 hi.json 
@@ -53,7 +54,8 @@ hi.json
     "confirmPasswordRequired": "पासवर्ड की पुष्टि आवश्यक है",
     "invalidEmail": "अमान्य ईमेल आईडी",
     "minPasswordLength": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए",
-    "passwordMustMatch": "पासवर्ड मेल खाना चाहिए"
+    "passwordMustMatch": "पासवर्ड मेल खाना चाहिए",
+    "selectLanguage":"भाषा चुने"
     }
 
 ta.json 
@@ -78,7 +80,8 @@ ta.json
     "confirmPasswordRequired": "கடவுச்சொல்லை உறுதிப்படுத்த வேண்டும்",
     "invalidEmail": "தவறான மின்னஞ்சல் ஐடி",
     "minPasswordLength": "கடவுச்சொல் குறைந்தது 6 எழுத்துகளாக இருக்க வேண்டும்",
-    "passwordMustMatch": "கடவுச்சொல் பொருந்த வேண்டும்"
+    "passwordMustMatch": "கடவுச்சொல் பொருந்த வேண்டும்",
+    "selectLanguage":"மொழியைத் தேர்ந்தெடுக்கவும்"
     }
 
 pa.json
@@ -103,7 +106,8 @@ pa.json
     "confirmPasswordRequired": "ਪਾਸਵਰਡ ਦੀ ਪੁਸ਼ਟੀ ਲਾਜ਼ਮੀ ਹੈ",
     "invalidEmail": "ਗਲਤ ਈਮੇਲ ਆਈਡੀ",
     "minPasswordLength": "ਪਾਸਵਰਡ ਘੱਟੋ ਘੱਟ 6 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ",
-    "passwordMustMatch": "ਪਾਸਵਰਡ ਮਿਲਣਾ ਚਾਹੀਦਾ ਹੈ"
+    "passwordMustMatch": "ਪਾਸਵਰਡ ਮਿਲਣਾ ਚਾਹੀਦਾ ਹੈ",
+    "selectLanguage":"ਭਾਸ਼ਾ ਚੁਣੋ"
     }
 
      
