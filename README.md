@@ -1,79 +1,109 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Localization
 
-# Getting Started
+# install packages 
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+    npm install @react-navigation/native react-native-screens react-native-safe-area-context @react-navigation/stack react-native-gesture-handler  react-native-localize i18next react-i18next
 
-## Step 1: Start the Metro Server
+# Need to create JSON file in locales folder
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+ en.json 
 
-To start Metro, run the following command from the _root_ of your React Native project:
+    {
+    "login": "Login",
+    "signup": "Sign Up",
+    "username": "Username",
+    "password": "Password",
+    "email": "Email",
+    "confirmPassword": "Confirm Password",
+    "welcome": "Welcome",
+    "signInHeadline": "Sign in to Continue!",
+    "forgotPassword": "Forgot Password?",
+    "emailRequired": "Email is required",
+    "passwordRequired": "Password is required",
+    "createNewUser": "Create a new account",
+    "createAccount": "Create Account",
+    "signupHeadline": "Sign up to get Started",
+    "alreadyUser": "I already have an account",
+    "usernameRequired": "Name is required",
+    "confirmPasswordRequired": "Confirm Password is required",
+    "invalidEmail": "Invalid Email Id",
+    "minPasswordLength": "Password must be at least 6 characters",
+    "passwordMustMatch": "Password must match"
+    }
 
-```bash
-# using npm
-npm start
+hi.json 
+  
+    {
+    "login": "लॉगिन करें",
+    "signup": "साइन अप करें",
+    "username": "यूज़रनेम",
+    "password": "पासवर्ड",
+    "email": "ईमेल",
+    "confirmPassword": "पासवर्ड की पुष्टि करें",
+    "welcome": "स्वागत है",
+    "signInHeadline": "जारी रखने के लिए साइन इन करें!",
+    "forgotPassword": "पासवर्ड भूल गए?",
+    "emailRequired": "ईमेल आवश्यक है",
+    "passwordRequired": "पासवर्ड आवश्यक है",
+    "createNewUser": "नया खाता बनाएं",
+    "createAccount": "खाता बनाएं",
+    "signupHeadline": "शुरू करने के लिए साइन अप करें",
+    "alreadyUser": "मेरे पास पहले से खाता है",
+    "usernameRequired": "नाम आवश्यक है",
+    "confirmPasswordRequired": "पासवर्ड की पुष्टि आवश्यक है",
+    "invalidEmail": "अमान्य ईमेल आईडी",
+    "minPasswordLength": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए",
+    "passwordMustMatch": "पासवर्ड मेल खाना चाहिए"
+    }
 
-# OR using Yarn
-yarn start
-```
+ta.json 
 
-## Step 2: Start your Application
+    {
+    "login": "உள்நுழைய",
+    "signup": "பதிவுபெறுக",
+    "username": "பயனர் பெயர்",
+    "password": "கடவுச்சொல்",
+    "email": "மின்னஞ்சல்",
+    "confirmPassword": "கடவுச்சொல்லை உறுதிப்படுத்தவும்",
+    "welcome": "வரவேற்கிறோம்",
+    "signInHeadline": "தொடர உள்நுழைக!",
+    "forgotPassword": "கடவுச்சொல் மறந்துவிட்டீர்களா?",
+    "emailRequired": "மின்னஞ்சல் தேவை",
+    "passwordRequired": "கடவுச்சொல் தேவை",
+    "createNewUser": "புதிய கணக்கை உருவாக்கவும்",
+    "createAccount": "கணக்கை உருவாக்கு",
+    "signupHeadline": "தொடங்க பதிவு செய்யவும்",
+    "alreadyUser": "நான் ஏற்கனவே கணக்கு வைத்திருக்கிறேன்",
+    "usernameRequired": "பெயர் தேவை",
+    "confirmPasswordRequired": "கடவுச்சொல்லை உறுதிப்படுத்த வேண்டும்",
+    "invalidEmail": "தவறான மின்னஞ்சல் ஐடி",
+    "minPasswordLength": "கடவுச்சொல் குறைந்தது 6 எழுத்துகளாக இருக்க வேண்டும்",
+    "passwordMustMatch": "கடவுச்சொல் பொருந்த வேண்டும்"
+    }
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+pa.json
 
-### For Android
+    {
+    "login": "ਲਾਗਇਨ",
+    "signup": "ਸਾਇਨ ਅਪ",
+    "username": "ਯੂਜ਼ਰਨੇਮ",
+    "password": "ਪਾਸਵਰਡ",
+    "email": "ਈਮੇਲ",
+    "confirmPassword": "ਪਾਸਵਰਡ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ",
+    "welcome": "ਸੁਆਗਤ ਹੈ",
+    "signInHeadline": "ਜਾਰੀ ਰੱਖਣ ਲਈ ਸਾਈਨ ਇਨ ਕਰੋ!",
+    "forgotPassword": "ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ?",
+    "emailRequired": "ਈਮੇਲ ਲਾਜ਼ਮੀ ਹੈ",
+    "passwordRequired": "ਪਾਸਵਰਡ ਲਾਜ਼ਮੀ ਹੈ",
+    "createNewUser": "ਇੱਕ ਨਵਾਂ ਖਾਤਾ ਬਣਾਓ",
+    "createAccount": "ਖਾਤਾ ਬਣਾਓ",
+    "signupHeadline": "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਸਾਇਨ ਅਪ ਕਰੋ",
+    "alreadyUser": "ਮੇਰੇ ਕੋਲ ਪਹਿਲਾਂ ਹੀ ਖਾਤਾ ਹੈ",
+    "usernameRequired": "ਨਾਂ ਲਾਜ਼ਮੀ ਹੈ",
+    "confirmPasswordRequired": "ਪਾਸਵਰਡ ਦੀ ਪੁਸ਼ਟੀ ਲਾਜ਼ਮੀ ਹੈ",
+    "invalidEmail": "ਗਲਤ ਈਮੇਲ ਆਈਡੀ",
+    "minPasswordLength": "ਪਾਸਵਰਡ ਘੱਟੋ ਘੱਟ 6 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ",
+    "passwordMustMatch": "ਪਾਸਵਰਡ ਮਿਲਣਾ ਚਾਹੀਦਾ ਹੈ"
+    }
 
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+     
