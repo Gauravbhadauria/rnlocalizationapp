@@ -1,0 +1,23 @@
+{
+    "login": "உள்நுழைய",
+    "signup": "பதிவுபெறுக",
+    "username": "பயனர் பெயர்",
+    "password": "கடவுச்சொல்",
+    "email": "மின்னஞ்சல்",
+    "confirmPassword": "கடவுச்சொல்லை உறுதிப்படுத்தவும்",
+    "welcome": "வரவேற்கிறோம்,",
+    "signInHeadline": "தொடர உள்நுழைக!",
+    "forgotPassword": "கடவுச்சொல் மறந்துவிட்டீர்களா?",
+    "emailRequired": "மின்னஞ்சல் தேவை",
+    "passwordRequired": "கடவுச்சொல் தேவை",
+    "createNewUser": "புதிய கணக்கை உருவாக்கவும்",
+    "createAccount": "கணக்கை உருவாக்கு",
+    "signupHeadline": "தொடங்க பதிவு செய்யவும்",
+    "alreadyUser": "நான் ஏற்கனவே கணக்கு வைத்திருக்கிறேன்",
+    "usernameRequired": "பெயர் தேவை",
+    "confirmPasswordRequired": "கடவுச்சொல்லை உறுதிப்படுத்த வேண்டும்",
+    "invalidEmail": "தவறான மின்னஞ்சல் ஐடி",
+    "minPasswordLength": "கடவுச்சொல் குறைந்தது 6 எழுத்துகளாக இருக்க வேண்டும்",
+    "passwordMustMatch": "கடவுச்சொல் பொருந்த வேண்டும்",
+    "selectLanguage":"மொழியைத் தேர்ந்தெடுக்கவும்"
+    }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -13,6 +13,9 @@ import * as Yup from 'yup';
 import {useNavigation} from '@react-navigation/native';
 import CommonButton from '../components/CommonButton';
 import SelectLangModal from '../components/SelectLangModal';
+import {useTranslation} from 'react-i18next';
+import i18n from '../../i18n';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Validation schema for login
 const loginValidationSchema = Yup.object().shape({
@@ -26,6 +29,26 @@ const Login = () => {
   const [selectLanguage, setSelectLanguage] = useState('English');
   const navigation = useNavigation();
   const [showModal, setShowModal] = useState(false);
+  const {t} = useTranslation();
+
+  useEffect(() => {
+    checkLng();
+  }, []);
+  const checkLng = async () => {
+    const x = await AsyncStorage.getItem('LANG');
+    if (x != null) {
+      i18n.changeLanguage(x);
+      let lng =
+        x == 'en'
+          ? 'English'
+          : x == 'hi'
+          ? 'हिंदी'
+          : x == 'pa'
+          ? 'ਪੰਜਾਬੀ'
+          : 'தமிழ்';
+      setSelectLanguage(lng);
+    }
+  };
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -36,8 +59,8 @@ const Login = () => {
         <Text style={styles.lang}>{selectLanguage}</Text>
         <Image source={require('../images/dropdown.png')} style={styles.icon} />
       </TouchableOpacity>
-      <Text style={styles.wish}>Welcome,</Text>
-      <Text style={styles.title}>Sign in to Continue!</Text>
+      <Text style={styles.wish}>{t('welcome')}</Text>
+      <Text style={styles.title}>{t('signInHeadline')}</Text>
       <Formik
         initialValues={{email: '', password: ''}}
         validationSchema={loginValidationSchema}
@@ -52,7 +75,7 @@ const Login = () => {
         }) => (
           <View>
             <TextInput
-              placeholder="Email"
+              placeholder={t('email')}
               style={styles.input}
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
@@ -64,7 +87,7 @@ const Login = () => {
             )}
 
             <TextInput
-              placeholder="Password"
+              placeholder={t('password')}
               style={styles.input}
               onChangeText={handleChange('password')}
               onBlur={handleBlur('password')}
@@ -75,13 +98,13 @@ const Login = () => {
               <Text style={styles.errorText}>{errors.password}</Text>
             )}
 
-            <Text style={styles.forgotPass}>Forgot Password?</Text>
-            <CommonButton title={'Login'} onPress={handleSubmit} />
+            <Text style={styles.forgotPass}>{t('forgotPassword')}</Text>
+            <CommonButton title={t('login')} onPress={handleSubmit} />
 
             <Text
               onPress={() => navigation.navigate('Signup')}
               style={styles.linkText}>
-              Create a new account
+              {t('createNewUser')}
             </Text>
           </View>
         )}
@@ -92,7 +115,17 @@ const Login = () => {
         onClose={() => {
           setShowModal(false);
         }}
-        onSelect={lang => {
+        onSelect={async lang => {
+          let lng =
+            lang == 'English'
+              ? 'en'
+              : lang == 'हिंदी'
+              ? 'hi'
+              : lang == 'ਪੰਜਾਬੀ'
+              ? 'pa'
+              : 'ta';
+          await AsyncStorage.setItem('LANG', lng);
+          i18n.changeLanguage(lng);
           setSelectLanguage(lang);
           setShowModal(false);
         }}

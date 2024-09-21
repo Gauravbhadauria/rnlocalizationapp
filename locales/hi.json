@@ -1,0 +1,23 @@
+{
+    "login": "लॉगिन करें",
+    "signup": "साइन अप करें",
+    "username": "यूज़रनेम",
+    "password": "पासवर्ड",
+    "email": "ईमेल",
+    "confirmPassword": "पासवर्ड की पुष्टि करें",
+    "welcome": "स्वागत है,",
+    "signInHeadline": "जारी रखने के लिए साइन इन करें!",
+    "forgotPassword": "पासवर्ड भूल गए?",
+    "emailRequired": "ईमेल आवश्यक है",
+    "passwordRequired": "पासवर्ड आवश्यक है",
+    "createNewUser": "नया खाता बनाएं",
+    "createAccount": "खाता बनाएं",
+    "signupHeadline": "शुरू करने के लिए साइन अप करें",
+    "alreadyUser": "मेरे पास पहले से खाता है",
+    "usernameRequired": "नाम आवश्यक है",
+    "confirmPasswordRequired": "पासवर्ड की पुष्टि आवश्यक है",
+    "invalidEmail": "अमान्य ईमेल आईडी",
+    "minPasswordLength": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए",
+    "passwordMustMatch": "पासवर्ड मेल खाना चाहिए",
+    "selectLanguage":"भाषा चुने"
+    }

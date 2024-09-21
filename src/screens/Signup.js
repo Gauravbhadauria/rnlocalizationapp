@@ -13,6 +13,7 @@ import * as Yup from 'yup';
 import {useNavigation} from '@react-navigation/native';
 import CommonButton from '../components/CommonButton';
 import SelectLangModal from '../components/SelectLangModal';
+import {useTranslation} from 'react-i18next';
 
 // Validation schema for signup
 const signupValidationSchema = Yup.object().shape({
@@ -27,21 +28,12 @@ const signupValidationSchema = Yup.object().shape({
 });
 
 const Signup = () => {
-  const [selectLanguage, setSelectLanguage] = useState('English');
   const navigation = useNavigation();
-  const [showModal, setShowModal] = useState(false);
+  const {t} = useTranslation();
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.langView}
-        onPress={() => {
-          setShowModal(true);
-        }}>
-        <Text style={styles.lang}>{selectLanguage}</Text>
-        <Image source={require('../images/dropdown.png')} style={styles.icon} />
-      </TouchableOpacity>
-      <Text style={styles.wish}>Create Account</Text>
-      <Text style={styles.title}>Sign up to get Started!</Text>
+      <Text style={styles.wish}>{t('createAccount')}</Text>
+      <Text style={styles.title}>{t('signupHeadline')}</Text>
       <Formik
         initialValues={{name: '', email: '', password: '', confirmPassword: ''}}
         validationSchema={signupValidationSchema}
@@ -56,7 +48,7 @@ const Signup = () => {
         }) => (
           <View>
             <TextInput
-              placeholder="Name"
+              placeholder={t('username')}
               style={styles.input}
               onChangeText={handleChange('name')}
               onBlur={handleBlur('name')}
@@ -67,7 +59,7 @@ const Signup = () => {
             )}
 
             <TextInput
-              placeholder="Email"
+              placeholder={t('email')}
               style={styles.input}
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
@@ -79,7 +71,7 @@ const Signup = () => {
             )}
 
             <TextInput
-              placeholder="Password"
+              placeholder={t('password')}
               style={styles.input}
               onChangeText={handleChange('password')}
               onBlur={handleBlur('password')}
@@ -91,7 +83,7 @@ const Signup = () => {
             )}
 
             <TextInput
-              placeholder="Confirm Password"
+              placeholder={t('confirmPassword')}
               style={styles.input}
               onChangeText={handleChange('confirmPassword')}
               onBlur={handleBlur('confirmPassword')}
@@ -102,25 +94,14 @@ const Signup = () => {
               <Text style={styles.errorText}>{errors.confirmPassword}</Text>
             )}
 
-            <CommonButton onPress={handleSubmit} title={'Sign up'} />
+            <CommonButton onPress={handleSubmit} title={t('signup')} />
 
             <Text onPress={() => navigation.goBack()} style={styles.linkText}>
-              I already have an account
+              {t('alreadyUser')}
             </Text>
           </View>
         )}
       </Formik>
-      <SelectLangModal
-        visible={showModal}
-        selectedLang={selectLanguage}
-        onClose={() => {
-          setShowModal(false);
-        }}
-        onSelect={lang => {
-          setSelectLanguage(lang);
-          setShowModal(false);
-        }}
-      />
     </View>
   );
 };
@@ -160,28 +141,6 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     fontWeight: '600',
     textAlign: 'center',
-  },
-  langView: {
-    borderWidth: 1,
-    borderRadius: 8,
-    padding: 10,
-    borderColor: '#9e9e9e',
-    position: 'absolute',
-    top: 30,
-    right: 30,
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-  lang: {
-    color: 'black',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  icon: {
-    width: 16,
-    height: 16,
-    marginLeft: 10,
-    tintColor: '#9e9e9e',
   },
 });
 

@@ -1,0 +1,23 @@
+{
+    "login": "ਲਾਗਇਨ",
+    "signup": "ਸਾਇਨ ਅਪ",
+    "username": "ਯੂਜ਼ਰਨੇਮ",
+    "password": "ਪਾਸਵਰਡ",
+    "email": "ਈਮੇਲ",
+    "confirmPassword": "ਪਾਸਵਰਡ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ",
+    "welcome": "ਸੁਆਗਤ ਹੈ,",
+    "signInHeadline": "ਜਾਰੀ ਰੱਖਣ ਲਈ ਸਾਈਨ ਇਨ ਕਰੋ!",
+    "forgotPassword": "ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ?",
+    "emailRequired": "ਈਮੇਲ ਲਾਜ਼ਮੀ ਹੈ",
+    "passwordRequired": "ਪਾਸਵਰਡ ਲਾਜ਼ਮੀ ਹੈ",
+    "createNewUser": "ਇੱਕ ਨਵਾਂ ਖਾਤਾ ਬਣਾਓ",
+    "createAccount": "ਖਾਤਾ ਬਣਾਓ",
+    "signupHeadline": "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਸਾਇਨ ਅਪ ਕਰੋ",
+    "alreadyUser": "ਮੇਰੇ ਕੋਲ ਪਹਿਲਾਂ ਹੀ ਖਾਤਾ ਹੈ",
+    "usernameRequired": "ਨਾਂ ਲਾਜ਼ਮੀ ਹੈ",
+    "confirmPasswordRequired": "ਪਾਸਵਰਡ ਦੀ ਪੁਸ਼ਟੀ ਲਾਜ਼ਮੀ ਹੈ",
+    "invalidEmail": "ਗਲਤ ਈਮੇਲ ਆਈਡੀ",
+    "minPasswordLength": "ਪਾਸਵਰਡ ਘੱਟੋ ਘੱਟ 6 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ",
+    "passwordMustMatch": "ਪਾਸਵਰਡ ਮਿਲਣਾ ਚਾਹੀਦਾ ਹੈ",
+    "selectLanguage":"ਭਾਸ਼ਾ ਚੁਣੋ"
+    }

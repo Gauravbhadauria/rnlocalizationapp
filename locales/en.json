@@ -1,0 +1,23 @@
+{
+    "login": "Login",
+    "signup": "Sign Up",
+    "username": "Username",
+    "password": "Password",
+    "email": "Email",
+    "confirmPassword": "Confirm Password",
+    "welcome": "Welcome,",
+    "signInHeadline": "Sign in to Continue!",
+    "forgotPassword": "Forgot Password?",
+    "emailRequired": "Email is required",
+    "passwordRequired": "Password is required",
+    "createNewUser": "Create a new account",
+    "createAccount": "Create Account",
+    "signupHeadline": "Sign up to get Started",
+    "alreadyUser": "I already have an account",
+    "usernameRequired": "Name is required",
+    "confirmPasswordRequired": "Confirm Password is required",
+    "invalidEmail": "Invalid Email Id",
+    "minPasswordLength": "Password must be at least 6 characters",
+    "passwordMustMatch": "Password must match",
+    "selectLanguage":"Select Language"
+    }
